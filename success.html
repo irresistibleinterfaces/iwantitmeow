@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thanks! — I Want It Meow</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .receipt{max-width:740px;margin:0 auto}
+    .row{display:flex;justify-content:space-between;margin:6px 0}
+    .stamp{font-size:14px;color:#5b6876}
+    .cta{display:inline-block;background:#182230;color:#fff;text-decoration:none;padding:10px 14px;border-radius:999px;margin-top:12px}
+    .muted{color:#5b6876;font-size:14px}
+    .box{background:#fff;border:1px solid #eee;border-radius:12px;padding:16px;margin-top:12px}
+  </style>
+</head>
+<body>
+  <main class="wrap receipt">
+    <div class="card" style="text-align:center">
+      <h2>Thanks! Your order is confirmed 🎉</h2>
+      <p class="stamp">A receipt has been emailed to you by PayPal.</p>
+      <div id="orderId" class="muted"></div>
+    </div>
+
+    <div class="box">
+      <h3>Order summary</h3>
+      <div class="row"><div>Product</div><div id="name">—</div></div>
+      <div class="row"><div>Quantity</div><div id="qty">—</div></div>
+      <div class="row"><div>Total</div><div id="total">—</div></div>
+    </div>
+
+    <div class="box">
+      <h3>What happens next?</h3>
+      <p>We’ll pack your order and hand it to our carrier. You’ll receive a tracking link within 1–4 days. Delivery time is typically <strong>7–14 days</strong> (AU).</p>
+      <p class="muted">Question about your order? Reply to your PayPal receipt or email <strong>support@iwantitmeow.com.au</strong>.</p>
+    </div>
+
+    <p><a class="cta" href="index.html">Back to I Want It Meow</a></p>
+  </main>
+
+  <script>
+    // Read the mini receipt saved on the checkout page
+    const raw = localStorage.getItem('lastOrder');
+    if (raw) {
+      try {
+        const r = JSON.parse(raw);
+        document.getElementById('name').textContent = r.name || '—';
+        document.getElementById('qty').textContent = r.qty || '—';
+        document.getElementById('total').textContent = `A$${Number(r.total||0).toFixed(2)}`;
+        if (r.orderId) document.getElementById('orderId').textContent = "Order ID: " + r.orderId;
+
+        // Clear it so refresh doesn't keep old data
+        localStorage.removeItem('lastOrder');
+      } catch(e){}
+    }
+  </script>
+</body>
+</html>

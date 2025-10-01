@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>I Want It Meow — Product</title>
+  <link rel="stylesheet" href="product-styles.css">
+
+
+  <!-- PayPal SDK (Sandbox for testing; swap to www.paypal.com for live) -->
+  <script src="https://www.paypal.com/sdk/js?client-id=ARN2kRRejx5sFkVP8gKOEGR_lX48O_ZHNSGtQM6Yvf824aND-e4TjktCrkIhCxnou_4iWRZyFzw53PhA&currency=AUD&intent=capture"></script>
+
+  <!-- Product catalog -->
+  <script src="js/products.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a href="index.html" style="text-decoration:none">&larr; Back</a>
+      <h1 id="brand">I Want It Meow</h1>
+    </div>
+  </header>
+
+  <main class="wrap" id="content" style="min-height:60vh">
+    <!-- Filled by JS -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      © <span id="year"></span> I Want It Meow
+    </div>
+  </footer>
+
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // get ?id= from URL
+    const params = new URLSearchParams(location.search);
+    const id = params.get('id');
+    const product = window.findProductById ? window.findProductById(id) : null;
+
+    // render
+    const el = document.getElementById('content');
+    if (!product) {
+      el.innerHTML = `
+        <div class="card">
+          <h2>Product not found</h2>
+          <p>Try going back to the homepage.</p>
+          <p><a href="index.html">Return home</a></p>
+        </div>
+      `;
+    } else {
+      // SEO-ish title swap
+      document.title = `I Want It Meow — ${product.name}`;
+      // detail layout (keep styles minimal so it plays nicely with your CSS)
+      el.innerHTML = `
+        <section class="product-detail" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start">
+          <div>
+            <img src="${product.img}" alt="${product.name}" style="width:100%;border-radius:12px;border:1px solid #eee">
+            ${product.gallery && product.gallery.length ? `
+              <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+                ${product.gallery.map(g => `<img src="${g}" alt="${product.name}" style="width:120px;height:90px;object-fit:cover;border-radius:8px;border:1px solid #eee">`).join('')}
+              </div>` : ``}
+          </div>
+          <div class="card" style="border:1px solid #eee;border-radius:12px;padding:16px">
+            <h2 style="margin:0 0 6px">${product.name}</h2>
+            <p style="margin:6px 0 10px;color:#5b6876">${product.description || ""}</p>
+            <ul style="margin:0 0 10px 18px">
+              ${(product.bullets||[]).map(b => `<li>${b}</li>`).join('')}
+            </ul>
+            <div style="display:flex;justify-content:space-between;align-items:end;margin:12px 0">
+              <div>
+                <div style="font-size:24px;font-weight:800">A$${product.price.toFixed(2)}</div>
+                <div style="font-size:12px;color:#5b6876">Tracked delivery: 7–14 days</div>
+              </div>
+              <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;color:#5b6876">
+                Qty
+                <input id="qty" type="number" min="1" value="1" style="padding:10px;border:1px solid #ddd;border-radius:8px;width:110px">
+              </label>
+            </div>
+            <div id="total" style="font-weight:700;margin:6px 0 12px">Total: A$${product.price.toFixed(2)}</div>
+            <div id="paypal-here"></div>
+            <p style="font-size:12px;color:#5b6876;margin-top:8px">30-day returns • Secure checkout via PayPal</p>
+          </div>
+        </section>
+      `;
+
+      const qtyEl = document.getElementById('qty');
+      const totalEl = document.getElementById('total');
+      const updateTotal = () => {
+        const q = Math.max(1, parseInt(qtyEl.value||'1',10));
+        totalEl.textContent = `Total: A$${(product.price*q).toFixed(2)}`;
+      };
+      qtyEl.addEventListener('input', updateTotal);
+      updateTotal();
+
+      // Mount PayPal
+      function mountPayPal() {
+        if (typeof paypal === 'undefined' || !paypal.Buttons) {
+          document.getElementById('paypal-here').innerHTML =
+            `<a href="#" onclick="alert('PayPal didn\\'t load. Disable ad blockers and refresh.')" 
+               style="text-decoration:none;background:#003087;color:#fff;padding:10px 14px;border-radius:999px;display:inline-block">Buy with PayPal</a>`;
+          return;
+        }
+        paypal.Buttons({
+          style: { layout: 'vertical', shape: 'pill', label: 'buynow' },
+          createOrder: (data, actions) => {
+            const q = Math.max(1, parseInt(qtyEl.value||'1',10));
+            const total = (product.price*q).toFixed(2);
+            return actions.order.create({
+              purchase_units: [{
+                amount: {
+                  currency_code: "AUD",
+                  value: total,
+                  breakdown: { item_total: { currency_code: "AUD", value: total } }
+                },
+                items: [{
+                  name: product.name,
+                  unit_amount: { currency_code: "AUD", value: product.price.toFixed(2) },
+                  quantity: q
+                }]
+              }],
+              application_context: { shipping_preference: "GET_FROM_FILE" }
+            });
+          },
+          onApprove: (data, actions) => actions.order.capture().then(details => {
+            const q = Math.max(1, parseInt(qtyEl.value||'1',10));
+            const receipt = { productId: product.id, name: product.name, qty: q, total: (product.price*q).toFixed(2), currency: "AUD", orderId: details.id };
+            localStorage.setItem('lastOrder', JSON.stringify(receipt));
+            location.href = "success.html";
+          }),
+          onCancel: () => location.href = "cancel.html",
+          onError: (err) => alert("Payment error: " + err)
+        }).render('#paypal-here');
+      }
+      // render PayPal
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", mountPayPal);
+      } else {
+        mountPayPal();
+      }
+    }
+  </script>
+</body>
+</html>
