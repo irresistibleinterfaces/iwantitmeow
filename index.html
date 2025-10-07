@@ -1,555 +1,391 @@
 <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <!-- Google tag (gtag.js) -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FPN94DQT2"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FPN94DQT2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} 
+      gtag('js', new Date());
+      gtag('config', 'G-5FPN94DQT2');
+    </script>
 
-        gtag('config', 'G-5FPN94DQT2');
-      </script>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="format-detection" content="telephone=no">
-      <meta name="apple-mobile-web-app-capable" content="yes">
-      <!-- site metas -->
-      <title>I Want It Meow</title>
-      <meta name="keywords" content="pet store supplies dog cat toys beds buy animal products">
-      <meta name="description" content="Shop online pet supplies at I Want It Meow – fun, quirky products for cats, dogs & more. Fast shipping Australia-wide. Treat your pets today!">
-      <meta name="author" content="Irresistible Interfaces">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-      <link rel="stylesheet" type="text/css" media="all" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" type="text/css" href="css/vendor.css">
-      <link rel="stylesheet" type="text/css" href="style.css">
-      <link rel="stylesheet" type="text/css" href="css/normalize.css">
-      <link rel="stylesheet" type="text/css" href="icomoon/icomoon.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="css/responsive.css">
-      <!-- favicon -->
-      <link rel="icon" href="images/favicon.png" type="image/gif" />
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <!-- fonts -->
-      <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-      <!-- font awesome -->
-      <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!-- owl stylesheets -->
-      <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Poppins:400,700&display=swap&subset=latin-ext" rel="stylesheet">
-      <link rel="stylesheet" href="css/owl.carousel.min.css">
-      <link rel="stylesheet" href="css/owl.theme.default.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      <!-- script -->
-      <script src="js/modernizr.js"></script>
-      <script src="js/products.js"></script>
-      <!-- styles -->
-      <style>
-        .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
-        .p-card{background:#fff;border:1px solid #eee;border-radius:12px;padding:14px;display:flex;flex-direction:column}
-        .p-img{width:100%;height:180px;object-fit:cover;border-radius:10px;border:1px solid #eee}
-        .p-title{font-weight:700;margin:8px 0 4px}
-        .p-price{font-weight:800;margin:6px 0}
-        .row{display:flex;align-items:center;justify-content:space-between;gap:8px}
-        .qty{width:90px;padding:8px;border:1px solid #ddd;border-radius:8px}
-        .tiny{font-size:12px;color:#5b6876}
-      </style>
-    </head>
-    
-    <body>
-      <!-- preloader -->
-      <div class="preloader-wrapper">
-        <div class="preloader">
-        </div>
+    <!-- basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- site metas -->
+    <title>I Want It Meow</title>
+    <meta name="keywords" content="pet store supplies dog cat toys beds buy animal products" />
+    <meta name="description" content="Shop online pet supplies at I Want It Meow – fun, quirky products for cats, dogs & more. Fast shipping Australia-wide. Treat your pets today!" />
+    <meta name="author" content="Irresistible Interfaces" />
+
+    <!-- favicon -->
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- vendor CSS (framework -> reset -> icons -> plugins) -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="icomoon/icomoon.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css" />
+
+    <!-- your styles last so they win; with cache-bust -->
+    <link rel="stylesheet" href="css/vendor.css?v=20251007-1" />
+    <link rel="stylesheet" href="style.css?v=20251007-1" />
+    <link rel="stylesheet" href="css/responsive.css?v=20251007-1" />
+
+    <!-- OPTIONAL: remove these if not used anywhere -->
+    <!-- <link rel="stylesheet" href="css/owl.carousel.min.css" /> -->
+    <!-- <link rel="stylesheet" href="css/owl.theme.default.min.css" /> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen" /> -->
+
+    <!-- Modernizr (safe to keep in head) -->
+    <script src="js/modernizr.js"></script>
+
+    <style>
+      /* Preloader */
+      .preloader-wrapper{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#fff;z-index:9999;opacity:1;visibility:visible;transition:opacity .3s ease,visibility .3s ease}
+      .preloader-wrapper.is-hidden{opacity:0;visibility:hidden}
+
+      /* Simple card grid (only used if #grid is present) */
+      .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+      .p-card{background:#fff;border:1px solid #eee;border-radius:12px;padding:14px;display:flex;flex-direction:column}
+      .p-img{width:100%;height:180px;object-fit:cover;border-radius:10px;border:1px solid #eee}
+      .p-title{font-weight:700;margin:8px 0 4px}
+      .p-price{font-weight:800;margin:6px 0}
+      .row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+      .qty{width:90px;padding:8px;border:1px solid #ddd;border-radius:8px}
+      .tiny{font-size:12px;color:#5b6876}
+    </style>
+  </head>
+
+  <body>
+    <!-- preloader -->
+    <div class="preloader-wrapper"><div class="preloader"></div></div>
+
+    <!-- search popup -->
+    <div class="search-popup">
+      <div class="search-popup-container">
+        <form role="search" method="get" class="search-form" action="">
+          <input type="search" id="search-form" class="search-field" placeholder="Search pet products..." value="" name="s" />
+          <button type="submit" class="search-submit"><a href="#"><i class="icon icon-search"></i></a></button>
+        </form>
+        <h5 class="cat-list-title">Browse Categories</h5>
+        <ul class="cat-list">
+          <li class="cat-list-item"><a href="#" title="Best Sellers">Best Sellers</a></li>
+          <li class="cat-list-item"><a href="#" title="On Sale">On Sale</a></li>
+          <li class="cat-list-item"><a href="#" title="Shop By Pet">Shop By Pet</a></li>
+          <li class="cat-list-item"><a href="#" title="Shop By Category">Shop By Category</a></li>
+          <li class="cat-list-item"><a href="#" title="Customer Service">Customer Service</a></li>
+        </ul>
       </div>
-
-      <!-- search popup -->
-      <div class="search-popup">
-        <div class="search-popup-container">
-
-          <form role="search" method="get" class="search-form" action="">
-            <input type="search" id="search-form" class="search-field" placeholder="Search pet products..." value="" name="s" />
-            <button type="submit" class="search-submit"><a href="#"><i class="icon icon-search"></i></a></button>
-          </form>
-
-          <h5 class="cat-list-title">Browse Categories</h5>
-        
-          <ul class="cat-list">
-            <li class="cat-list-item">
-              <a href="#" title="Best Sellers">Best Sellers</a>
-            </li>
-            <li class="cat-list-item">
-              <a href="#" title="On Sale">On Sale</a>
-            </li>
-            <li class="cat-list-item">
-              <a href="#" title="Shop By Pet">Shop By Pet</a>
-            </li>
-            <li class="cat-list-item">
-              <a href="#" title="Shop By Category">Shop By Catagory</a>
-            </li>
-            <li class="cat-list-item">
-              <a href="#" title="Customer Service">Customer Service</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- header start -->
-      <header id="header">
-        <div id="header-wrap">
-          
-          <!-- secondary nav start -->
-          <nav class="secondary-nav border-bottom">
-            <div class="container">
-              <div class="row d-flex align-items-center">
-                <div class="col-md-4 header-contact">
-                  <p>Let's talk! <strong>1800 HELP MEOW</strong>
-                  </p>
-                </div>
-                <div class="col-md-4 shipping-purchase text-center">
-                  <p>Free shipping on a purchase value of $100</p>
-                </div>
-                <div class="col-md-4 col-sm-12 user-items">
-                  <ul class="d-flex justify-content-end list-unstyled">
-                    <li>
-                      <a href="login.html">
-                        <i class="icon icon-user"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="cart.html">
-                        <i class="icon icon-shopping-cart"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="wishlist.html">
-                        <i class="icon icon-heart"></i>
-                      </a>
-                    </li>
-                    <li class="user-items search-item pe-3">
-                      <a href="#" class="search-button">
-                        <i class="icon icon-search"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </nav>
-          <!-- secondary nav end -->
-          
-          <!-- primary nav start -->
-          <nav class="primary-nav padding-xsmall-logo">
-            <div class="container">
-              <div class="row d-flex align-items-center">
-                <div class="col-lg-2 col-md-2" style="width: 380px">
-                  <div class="main-logo">
-                    <a href="index.html">
-                      <img src="images/logo1.png" alt="logo">
-                    </a>
-                  </div>
-                </div>
-
-                <div class="col-lg-10 col-md-10">
-                  <div class="navbar">
-                    <div id="main-nav" class="stellarnav d-flex justify-content-end right">
-                      <ul class="menu-list">
-                        <li><a href="index.html" class="item-anchor active d-flex align-item-center" data-effect="Home">Home</a></li>
-                        <li><a href="about.html" class="item-anchor" data-effect="About">About</a></li>
-                        <li class="menu-item has-sub">
-                          <a href="shop.html" class="item-anchor d-flex align-item-center" data-effect="Shop">Shop By Pet<i class="icon icon-chevron-down"></i></a>
-                          <ul class="submenu">
-                            <li><a href="index.html" class="item-anchor">Dogs</a></li>
-                            <li><a href="index.html" class="item-anchor">Cats</a></li>
-                            <li><a href="index.html" class="item-anchor">Birds</a></li>
-                            <li><a href="index.html" class="item-anchor">Fish & Aquatics</a></li>
-                            <li><a href="index.html" class="item-anchor">Small Animals</a></li>
-                            <li><a href="index.html" class="item-anchor">Reptiles & Amphibians</a></li>
-                            <li><a href="index.html" class="item-anchor">Horses & Farm Animals</a></li>
-                          </ul>
-                        </li>
-                        <li class="menu-item has-sub">
-                          <a href="shop.html" class="item-anchor d-flex align-item-center" data-effect="Shop">Shop By Category<i class="icon icon-chevron-down"></i></a>
-                          <ul class="submenu">
-                            <li><a href="index.html" class="item-anchor">Beds & Sofas</a></li>
-                            <li><a href="index.html" class="item-anchor">Toys</a></li>
-                            <li><a href="index.html" class="item-anchor">Trees & Scratchers</a></li>
-                            <li><a href="index.html" class="item-anchor">Costumes</a></li>
-                            <li><a href="index.html" class="item-anchor">Grooming</a></li>
-                            <li><a href="index.html" class="item-anchor">Training</a></li>
-                            <li><a href="index.html" class="item-anchor">Treats</a></li>
-                            <li><a href="index.html" class="item-anchor">Enclosures</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#" class="item-anchor" data-effect="All">Shop All</a></li>
-                        <li><a href="#" class="item-anchor" data-effect="Contact"><b>ON SALE</b></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-          </nav>
-          <!-- primary nav end -->
-          
-        </div>
-      </header>
-      <!-- header end -->
-
-      <!-- hero section start -->
-<section id="billboard" class="overflow-hidden">
-  <button class="button-prev"><i class="icon icon-chevron-left"></i></button>
-  <button class="button-next"><i class="icon icon-chevron-right"></i></button>
-
-  <div class="swiper main-swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide hero-slide slide-1">
-        <div class="banner-content" style="top: 50px;">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <h2 class="banner-title">See the World Through Their Eyes</h2>
-                <p>From pet POV cameras to ridiculous costumes — we're Australia's #1 online pet supply store.</p>
-                <div class="btn-wrap">
-                  <a href="shop.html" class="btn btn-light btn-medium d-flex align-items-center">Shop POV Cameras <i class="icon icon-arrow-io"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!-- /slide-1 -->
-
-      <div class="swiper-slide hero-slide slide-2">
-        <div class="banner-content" style="top: 145px;">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <h2 class="banner-title">Costume Collection</h2>
-                <p>Shop for fun and quirky products for pets who like a little roleplay.</p>
-                <div class="btn-wrap">
-                  <a href="shop.html" class="btn btn-light btn-light-arrow btn-medium d-flex align-items-center">Shop Costumes <i class="icon icon-arrow-io"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!-- /slide-2 -->
     </div>
-  </div>
-</section>
-      <!-- hero section end -->
 
-      <!-- featured products section start -->
-      <section id="featured-products" class="product-store padding-large">
-        <div class="container">
-          <div class="section-header d-flex flex-wrap align-items-center justify-content-between">
-            <h2 class="section-title">Featured Products</h2>            
-            <div class="btn-wrap">
-              <a href="shop.html" class="d-flex align-items-center">View all products <i class="icon icon icon-arrow-io"></i></a>
-            </div>            
-          </div>
-          <div class="swiper product-swiper overflow-hidden">
-            <div class="swiper-wrapper">
-
-              <div class="swiper-slide">
-                <div class="product-item" data-id="sushi-scratcher">
-                  <div class="image-holder">
-                    <a href="product.html?id=sushi-scratcher">
-                      <img src="images/sushi-scratcher.jpg" alt="Cat Sushi Scratcher (Nigiri)" class="product-image">
-                    </a>
-                  </div>
-                  <div class="cart-concern">
-                    <div class="cart-button d-flex justify-content-between align-items-center">
-                      <!-- We'll turn these into links to the product page -->
-                      <button type="button" class="btn-wrap cart-link d-flex align-items-center">
-                        add to cart <i class="icon icon-arrow-io"></i>
-                      </button>
-                      <button type="button" class="view-btn tooltip d-flex">
-                        <i class="icon icon-screen-full"></i>
-                        <span class="tooltip-text">Quick view</span>
-                      </button>
-                      <button type="button" class="wishlist-btn">
-                        <i class="icon icon-heart"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="product-detail">
-                    <h3 class="product-title">
-                      <a href="product.html?id=sushi-scratcher">Sushi Scratcher</a>
-                    </h3>
-                    <span class="item-price text-primary">A$40.00</span>
-                  </div>
-                </div>
+    <!-- header start -->
+    <header id="header">
+      <div id="header-wrap">
+        <!-- secondary nav start -->
+        <nav class="secondary-nav border-bottom">
+          <div class="container">
+            <div class="row d-flex align-items-center">
+              <div class="col-md-4 header-contact">
+                <p>Let's talk! <strong>1800 HELP MEOW</strong></p>
               </div>
-
-              <div class="swiper-slide">
-                <div class="product-item" data-id="collar-camera-pro-kit">
-                  <div class="image-holder">
-                    <a href="product.html?id=collar-camera-pro-kit">
-                      <img src="images/collar-camera-pro-kit.jpg" alt="4K WiFi Pet Collar Camera Pro Kit" class="product-image">
-                    </a>
-                  </div>
-                  <div class="cart-concern">
-                    <div class="cart-button d-flex justify-content-between align-items-center">
-                      <button type="button" class="btn-wrap cart-link d-flex align-items-center">
-                        add to cart <i class="icon icon-arrow-io"></i>
-                      </button>
-                      <button type="button" class="view-btn tooltip d-flex">
-                        <i class="icon icon-screen-full"></i>
-                        <span class="tooltip-text">Quick view</span>
-                      </button>
-                      <button type="button" class="wishlist-btn">
-                        <i class="icon icon-heart"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="product-detail">
-                    <h3 class="product-title">
-                      <a href="product.html?id=collar-camera-pro-kit">4K WiFi Pet Collar Camera Pro Kit</a>
-                    </h3>
-                    <span class="item-price text-primary">A$129.00</span>
-                  </div>
-                </div>
+              <div class="col-md-4 shipping-purchase text-center">
+                <p>Free shipping on a purchase value of $200</p>
               </div>
-
-              <div class="swiper-slide">
-                <div class="product-item" data-id="ups-dog-costume">
-                  <div class="image-holder">
-                    <a href="product.html?id=ups-dog-costume">
-                      <img src="images/ups-dog-costumer.jpg" alt="UPS Dog Costume" class="product-image">
-                    </a>
-                  </div>
-                  <div class="cart-concern">
-                    <div class="cart-button d-flex justify-content-between align-items-center">
-                      <button type="button" class="btn-wrap cart-link d-flex align-items-center">
-                        add to cart <i class="icon icon-arrow-io"></i>
-                      </button>
-                      <button type="button" class="view-btn tooltip d-flex">
-                        <i class="icon icon-screen-full"></i>
-                        <span class="tooltip-text">Quick view</span>
-                      </button>
-                      <button type="button" class="wishlist-btn">
-                        <i class="icon icon-heart"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="product-detail">
-                    <h3 class="product-title">
-                      <a href="product.html?id=ups-dog-costume">UPS Dog Costume</a>
-                    </h3>
-                    <span class="item-price text-primary">A$39.00</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="swiper-slide">
-                <div class="product-item" data-id="collar-camera-mini">
-                  <div class="image-holder">
-                    <a href="product.html?id=collar-camera-mini">
-                      <img src="images/collar-camera-mini.jpg" alt="Wireless Mini Pet Collar Camera" class="product-image">
-                    </a>
-                  </div>
-                  <div class="cart-concern">
-                    <div class="cart-button d-flex justify-content-between align-items-center">
-                      <button type="button" class="btn-wrap cart-link d-flex align-items-center">
-                        add to cart <i class="icon icon-arrow-io"></i>
-                      </button>
-                      <button type="button" class="view-btn tooltip d-flex">
-                        <i class="icon icon-screen-full"></i>
-                        <span class="tooltip-text">Quick view</span>
-                      </button>
-                      <button type="button" class="wishlist-btn">
-                        <i class="icon icon-heart"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="product-detail">
-                    <h3 class="product-title">
-                      <a href="product.html?id=collar-camera-mini">Wireless Mini Pet Collar Camera</a>
-                    </h3>
-                    <span class="item-price text-primary">A$39.00</span>
-                  </div>
-                </div>
-              </div>
-          
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </section>
-      <!-- featured products section end -->
-
-      <!-- quotation section start -->
-      <section id="quotation" class="align-center padding-large">
-        <div class="inner-content">
-          <h2 class="section-title divider">Quote of the day</h2>
-          <blockquote>
-            <q>It's true, I don't like the whole cutoff-shorts-and-T-shirt look, but I think you can look fantastic in casual clothes.</q>
-            <div class="author-name">- Dr. Seuss</div>
-          </blockquote>
-        </div>
-      </section>
-      <!-- quotation section end -->
-
-      <!-- shipping information section start -->
-      <section id="shipping-information">
-        <hr>
-        <div class="container">
-          <div class="row d-flex flex-wrap align-items-center justify-content-between">
-            <div class="col-md-3 col-sm-6">
-              <div class="icon-box">
-                <i class="icon icon-truck"></i>
-                <h4 class="block-title">
-                  <strong>Free shipping</strong> Over $200
-                </h4>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-              <div class="icon-box">
-                <i class="icon icon-return"></i>
-                <h4 class="block-title">
-                  <strong>Money back</strong> Return within 7 days
-                </h4>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-              <div class="icon-box">
-                <i class="icon icon-tags1"></i>
-                <h4 class="block-title">
-                  <strong>Buy 4 get 5th</strong> 50% off
-                </h4>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-              <div class="icon-box">
-                <i class="icon icon-help_outline"></i>
-                <h4 class="block-title">
-                  <strong>Any questions?</strong> experts are ready
-                </h4>
+              <div class="col-md-4 col-sm-12 user-items">
+                <ul class="d-flex justify-content-end list-unstyled">
+                  <li><a href="login.html"><i class="icon icon-user"></i></a></li>
+                  <li><a href="cart.html"><i class="icon icon-shopping-cart"></i></a></li>
+                  <li><a href="wishlist.html"><i class="icon icon-heart"></i></a></li>
+                  <li class="user-items search-item pe-3"><a href="#" class="search-button"><i class="icon icon-search"></i></a></li>
+                </ul>
               </div>
             </div>
           </div>
-        </div>
-        <hr>
-      </section>
-      <!-- shipping information section end -->
-
-      <!-- footer start -->
-      <footer id="footer">
-        <div class="container">
-          <div class="footer-menu-list">
-            <div class="row d-flex flex-wrap justify-content-between">
-              <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="footer-menu">
-                  <h5 class="widget-title">Ultras</h5>
-                  <ul class="menu-list list-unstyled">
-                    <li class="menu-item">
-                      <a href="about.html">About us</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="#">Conditions </a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="blog.html">Our Journals</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="#">Careers</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="#">Affiliate Programme</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="#">Ultras Press</a>
-                    </li>
-                  </ul>
-                </div>
+        </nav>
+        <!-- primary nav start -->
+        <nav class="primary-nav">
+          <div class="container">
+            <div class="row d-flex align-items-center">
+              <div class="col-lg-2 col-md-2" style="width: 380px">
+                <div class="main-logo"><a href="index.html"><img src="images/logo1.png" alt="logo"></a></div>
               </div>
-              <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="footer-menu">
-                  <h5 class="widget-title">Customer Service</h5>
-                  <ul class="menu-list list-unstyled">
-                    <li class="menu-item">
-                      <a href="faqs.html">FAQ</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="contact.html">Contact</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="#">Privacy Policy</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="#">Returns & Refunds</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="#">Cookie Guidelines</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="#">Delivery Information</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="footer-menu">
-                  <h5 class="widget-title">Contact Us</h5>
-                  <p>Do you have any questions or suggestions? <a href="#" class="email">ourservices@ultras.com</a>
-                  </p>
-                  <p>Do you need assistance? Give us a call. <br>
-                    <strong>+57 444 11 00 35</strong>
-                  </p>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="footer-menu">
-                  <h5 class="widget-title">Forever 2018</h5>
-                  <p>Cras mattis sit ornare in metus eu amet adipiscing enim. Ullamcorper in orci, ultrices integer eget arcu. Consectetur leo dignissim lacus, lacus sagittis dictumst.</p>
-                  <div class="social-links">
-                    <ul class="d-flex list-unstyled">
-                      <li>
-                        <a href="#">
-                          <i class="icon icon-facebook"></i>
-                        </a>
+              <div class="col-lg-10 col-md-10">
+                <div class="navbar">
+                  <div id="main-nav" class="stellarnav d-flex justify-content-end right">
+                    <ul class="menu-list">
+                      <li><a href="index.html" class="item-anchor active d-flex align-item-center" data-effect="Home">Home</a></li>
+                      <li><a href="about.html" class="item-anchor" data-effect="About">About</a></li>
+                      <li class="menu-item has-sub">
+                        <a href="shop.html" class="item-anchor d-flex align-item-center" data-effect="Shop">Shop By Pet<i class="icon icon-chevron-down"></i></a>
+                        <ul class="submenu">
+                          <li><a href="index.html" class="item-anchor">Dogs</a></li>
+                          <li><a href="index.html" class="item-anchor">Cats</a></li>
+                          <li><a href="index.html" class="item-anchor">Birds</a></li>
+                          <li><a href="index.html" class="item-anchor">Fish & Aquatics</a></li>
+                          <li><a href="index.html" class="item-anchor">Small Animals</a></li>
+                          <li><a href="index.html" class="item-anchor">Reptiles & Amphibians</a></li>
+                          <li><a href="index.html" class="item-anchor">Horses & Farm Animals</a></li>
+                        </ul>
                       </li>
-                      <li>
-                        <a href="#">
-                          <i class="icon icon-twitter"></i>
-                        </a>
+                      <li class="menu-item has-sub">
+                        <a href="shop.html" class="item-anchor d-flex align-item-center" data-effect="Shop">Shop By Category<i class="icon icon-chevron-down"></i></a>
+                        <ul class="submenu">
+                          <li><a href="index.html" class="item-anchor">Beds & Sofas</a></li>
+                          <li><a href="index.html" class="item-anchor">Toys</a></li>
+                          <li><a href="index.html" class="item-anchor">Trees & Scratchers</a></li>
+                          <li><a href="index.html" class="item-anchor">Costumes</a></li>
+                          <li><a href="index.html" class="item-anchor">Grooming</a></li>
+                          <li><a href="index.html" class="item-anchor">Training</a></li>
+                          <li><a href="index.html" class="item-anchor">Treats</a></li>
+                          <li><a href="index.html" class="item-anchor">Enclosures</a></li>
+                        </ul>
                       </li>
-                      <li>
-                        <a href="#">
-                          <i class="icon icon-youtube-play"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="icon icon-behance-square"></i>
-                        </a>
-                      </li>
+                      <li><a href="#" class="item-anchor" data-effect="All">Shop All</a></li>
+                      <li><a href="#" class="item-anchor" data-effect="Contact"><b>ON SALE</b></a></li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </nav>
+        <!-- primary nav end -->
+      </div>
+    </header>
+    <!-- header end -->
+
+    <!-- hero section start -->
+    <section id="billboard" class="overflow-hidden">
+      <button class="button-prev"><i class="icon icon-chevron-left"></i></button>
+      <button class="button-next"><i class="icon icon-chevron-right"></i></button>
+      <div class="swiper main-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide hero-slide slide-1">
+            <div class="banner-content" style="top: 16px;">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h2 class="banner-title">See the<br>World Through<br>Their Eyes</h2>
+                    <p>See your pet’s world in 4K. Lightweight collar camera for cats & dogs. Ships from Australia.</p>
+                    <div class="btn-wrap">
+                      <a href="shop.html" class="btn btn-light btn-medium d-flex align-items-center">Shop POV Cameras <i class="icon icon-arrow-io"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide hero-slide slide-2">
+            <div class="banner-content" style="top: 92px;">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h2 class="banner-title">Costume Collection</h2>
+                    <p>Browse fun and quirky products, <em> for pets who like a little roleplay</em>.</p>
+                    <div class="btn-wrap">
+                      <a href="shop.html" class="btn btn-light btn-light-arrow btn-medium d-flex align-items-center">Shop Costumes <i class="icon icon-arrow-io"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <hr>
-      </footer>
-      <!-- footer end -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+    <!-- hero section end -->
+
+    <!-- featured products section start -->
+    <section id="featured-products" class="product-store padding-large">
+      <div class="container">
+        <div class="section-header d-flex flex-wrap align-items-center justify-content-between">
+          <h2 class="section-title">Featured Products</h2>
+          <div class="btn-wrap"><a href="shop.html" class="d-flex align-items-center">View all products <i class="icon icon icon-arrow-io"></i></a></div>
+        </div>
+        <div class="swiper product-swiper overflow-hidden">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="product-item" data-id="sushi-scratcher">
+                <div class="image-holder">
+                  <a href="product.html?id=sushi-scratcher"><img src="images/sushi-scratcher.jpg" alt="Cat Sushi Scratcher (Nigiri)" class="product-image"></a>
+                </div>
+                <div class="cart-concern">
+                  <div class="cart-button d-flex justify-content-between align-items-center">
+                    <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i></button>
+                    <button type="button" class="view-btn tooltip d-flex"><i class="icon icon-screen-full"></i><span class="tooltip-text">Quick view</span></button>
+                    <button type="button" class="wishlist-btn"><i class="icon icon-heart"></i></button>
+                  </div>
+                </div>
+                <div class="product-detail">
+                  <h3 class="product-title"><a href="product.html?id=sushi-scratcher">Sushi Scratcher</a></h3>
+                  <span class="item-price text-primary">A$39.00</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-item" data-id="collar-camera-pro">
+                <div class="image-holder">
+                  <a href="product.html?id=collar-camera-pro"><img src="images/collar-camera-pro.png" alt="4K WiFi Pet Collar Camera Pro Kit" class="product-image"></a>
+                </div>
+                <div class="cart-concern">
+                  <div class="cart-button d-flex justify-content-between align-items-center">
+                    <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i></button>
+                    <button type="button" class="view-btn tooltip d-flex"><i class="icon icon-screen-full"></i><span class="tooltip-text">Quick view</span></button>
+                    <button type="button" class="wishlist-btn"><i class="icon icon-heart"></i></button>
+                  </div>
+                </div>
+                <div class="product-detail">
+                  <h3 class="product-title"><a href="product.html?id=collar-camera-pro">Pet Collar Camera Pro Kit</a></h3>
+                  <span class="item-price text-primary">A$129.00</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-item" data-id="ups-dog-costume">
+                <div class="image-holder">
+                  <a href="product.html?id=ups-dog-costume"><img src="images/ups-dog-costume.jpg" alt="UPS Dog Costume" class="product-image"></a>
+                </div>
+                <div class="cart-concern">
+                  <div class="cart-button d-flex justify-content-between align-items-center">
+                    <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i></button>
+                    <button type="button" class="view-btn tooltip d-flex"><i class="icon icon-screen-full"></i><span class="tooltip-text">Quick view</span></button>
+                    <button type="button" class="wishlist-btn"><i class="icon icon-heart"></i></button>
+                  </div>
+                </div>
+                <div class="product-detail">
+                  <h3 class="product-title"><a href="product.html?id=ups-dog-costume">UPS Dog Costume</a></h3>
+                  <span class="item-price text-primary">A$39.00</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-item" data-id="collar-camera-mini">
+                <div class="image-holder">
+                  <a href="product.html?id=collar-camera-mini"><img src="images/collar-camera-mini.jpg" alt="Wireless Pet Collar Camera Mini" class="product-image"></a>
+                </div>
+                <div class="cart-concern">
+                  <div class="cart-button d-flex justify-content-between align-items-center">
+                    <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i></button>
+                    <button type="button" class="view-btn tooltip d-flex"><i class="icon icon-screen-full"></i><span class="tooltip-text">Quick view</span></button>
+                    <button type="button" class="wishlist-btn"><i class="icon icon-heart"></i></button>
+                  </div>
+                </div>
+                <div class="product-detail">
+                  <h3 class="product-title"><a href="product.html?id=collar-camera-mini">Pet Collar Camera Mini</a></h3>
+                  <span class="item-price text-primary">A$39.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <!-- featured products section end -->
+
+    <!-- quotation section start -->
+    <section id="quotation" class="align-center padding-large">
+      <div class="inner-content">
+        <h2 class="section-title divider">Quote of the day</h2>
+        <blockquote>
+          <q>The greatness of a nation and its moral progress can be judged by the way its animals are treated.</q>
+          <div class="author-name">- Mahatma Gandhi</div>
+        </blockquote>
+      </div>
+    </section>
+    <!-- quotation section end -->
+
+    <!-- shipping information section start -->
+    <section id="shipping-information">
+      <hr>
+      <div class="container">
+        <div class="row d-flex flex-wrap align-items-center justify-content-between">
+          <div class="col-md-3 col-sm-6">
+            <div class="icon-box"><i class="icon icon-truck"></i>
+              <h4 class="block-title"><strong>Free shipping</strong> Over $200</h4>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="icon-box"><i class="icon icon-return"></i>
+              <h4 class="block-title"><strong>Money back</strong> Return within 7 days</h4>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="icon-box"><i class="icon icon-help_outline"></i>
+              <h4 class="block-title"><strong>Any questions?</strong> experts are ready</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </section>
+    <!-- shipping information section end -->
+
+    <!-- footer start -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-menu-list">
+          <div class="row d-flex flex-wrap justify-content-between">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="footer-menu">
+                <h5 class="widget-title">I Want It Meow</h5>
+                <ul class="menu-list list-unstyled">
+                  <li class="menu-item"><a href="about.html">About us</a></li>
+                  <li class="menu-item"><a href="faqs.html">FAQ</a></li>
+                  <li class="menu-item"><a href="terms.html">Terms & Conditions</a></li>
+                  <li class="menu-item"><a href="privacy-policy.html">Privacy Policy</a></li>
+                  <li class="menu-item"><a href="return-and-refund-policy.html">Returns & Refunds</a></li>
+                  <li class="menu-item"><a href="cookies.html">Cookie Guidelines</a></li>
+                  <li class="menu-item"><a href="shipping.html">Delivery Information</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="footer-menu">
+                <h5 class="widget-title">Contact Us</h5>
+                <p>Do you have any questions? <a href="#" class="email">irresistibleinterfaces@gmail.com</a></p>
+                <p>Prefer to speak to a human? Send us an email with your contact details and a brief description of the purpose of the call and a representative will contact you by phone within two business days.</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="footer-menu">
+                <h5 class="widget-title"><a href="irresistibleinterfaces.com.au">Irresistible Interfaces</a></h5>
+                <p>Irresistible Interfaces is an Australia-based design & development studio creating fast, accessible ecommerce experiences and conversions that actually convert. Need a site like this? <a href="https://irresistibleinterfaces.com.au/">Let’s talk</a>.</p>
+                <div class="social-links">
+                  <ul class="d-flex list-unstyled">
+                    <li><a href="#"><i class="icon icon-facebook"></i></a></li>
+                    <li><a href="#"><i class="icon icon-github"></i></a></li>
+                    <li><a href="#"><i class="icon icon-youtube-play"></i></a></li>
+                    <li><a href="#"><i class="icon icon-google"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </footer>
+    <!-- footer end -->
 
     <div id="footer-bottom">
       <div class="container">
         <div class="d-flex align-items-center flex-wrap justify-content-between">
           <div class="copyright">
-            <p>Design by <a href="https://irresistibleinterfaces.com.au/">Irresistible Interfaces</a>
-            </p>
+            <p>Design by <a href="https://irresistibleinterfaces.com.au/">Irresistible Interfaces</a></p>
           </div>
           <div class="payment-method">
             <p>Payment options :</p>
@@ -563,142 +399,119 @@
       </div>
     </div>
 
-       <script src="https://www.paypal.com/sdk/js?client-id=ARN2kRRejx5sFkVP8gKOEGR_lX48O_ZHNSGtQM6Yvf824aND-e4TjktCrkIhCxnou_4iWRZyFzw53PhA&currency=AUD"></script>
- <script>
-  function goToProduct(id){
-    window.location.href = "product.html?id=" + encodeURIComponent(id);
-  }
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=ARN2kRRejx5sFkVP8gKOEGR_lX48O_ZHNSGtQM6Yvf824aND-e4TjktCrkIhCxnou_4iWRZyFzw53PhA&currency=AUD"></script>
 
-  document.querySelectorAll('.product-item').forEach(item => {
-    const id = item.getAttribute('data-id');
-    const cartBtn = item.querySelector('.cart-link');
-    const viewBtn = item.querySelector('.view-btn');
-
-    if (cartBtn) cartBtn.addEventListener('click', () => goToProduct(id));
-    if (viewBtn) viewBtn.addEventListener('click', () => goToProduct(id));
-  });
-</script>
-
-<script>
-  // 1) YOUR PRODUCTS live here:
-const products = [
-  {
-    id: "engagement-ring-toy",
-    name: "Stuffed Engagement Ring Chew Toy",
-    price: 12.50,
-    img: "https://via.placeholder.com/400x300?text=Ring+Toy",  // replace with real image
-    bullets: [
-      "Soft plush design",
-      "Durable for light chew",
-      "Fun for dogs & cats",
-      "Lightweight shipping"
-    ],
-    supplier: {
-      type: "AliExpress",
-      url: "https://www.aliexpress.com/item/xxxxxxx"
-    }
-  },
-  {
-    id: "plush-bell-balls",
-    name: "Plush Ball with Bells (3-pack)",
-    price: 5.99,
-    img: "https://via.placeholder.com/400x300?text=Plush+Balls",
-    bullets: [
-      "Set of 3 plush balls",
-      "Rattle bells inside",
-      "Soft & lightweight",
-      "Ideal for indoor play"
-    ],
-    supplier: {
-      type: "AliExpress",
-      url: "https://www.aliexpress.com/item/yyyyyyy"
-    }
-  },
-  {
-    id: "auto-rolling-ball",
-    name: "Auto-Rolling Electric Ball Toy",
-    price: 22.00,
-    img: "https://via.placeholder.com/400x300?text=Electric+Ball",
-    bullets: [
-      "Automatic motion when touched",
-      "USB rechargeable",
-      "Great for cats & small dogs",
-      "Enclosed design, safe edges"
-    ],
-    supplier: {
-      type: "AliExpress",
-      url: "https://www.aliexpress.com/item/zzzzzzz"
-    }
-  }
-];
-
-  
-  // 2) Render product cards
-  const grid = document.getElementById('grid');
-  grid.innerHTML = products.map(p => `
-    <div class="p-card" id="card-${p.id}">
-      <img class="p-img" src="${p.img}" alt="${p.name}">
-      <div class="p-title">${p.name}</div>
-      <ul class="tiny" style="margin:0 0 8px 16px;">
-        ${p.bullets.map(b => `<li>${b}</li>`).join("")}
-      </ul>
-      <div class="p-price">A$${p.price.toFixed(2)}</div>
-      <div class="row">
-        <label class="tiny">Qty<br><input class="qty" id="qty-${p.id}" type="number" min="1" value="1"></label>
-        <div class="tiny" id="total-${p.id}">Total: A$${p.price.toFixed(2)}</div>
-      </div>
-      <div id="pp-${p.id}" style="margin-top:8px"></div>
-      <div class="tiny">Tracked delivery: 7–14 days • 30-day returns</div>
-    </div>
-  `).join("");
-
-  // 3) For each product, mount a PayPal button that uses its own qty/price
-  products.forEach(p => {
-    const qtyInput = document.getElementById(`qty-${p.id}`);
-    const totalEl = document.getElementById(`total-${p.id}`);
-    const updateTotal = () => {
-      const q = Math.max(1, parseInt(qtyInput.value||'1',10));
-      totalEl.textContent = `Total: A$${(p.price*q).toFixed(2)}`;
-    };
-    qtyInput.addEventListener('input', updateTotal);
-    updateTotal();
-
-    paypal.Buttons({
-      style: { layout: 'vertical', shape: 'pill', label: 'buynow' },
-      createOrder: (data, actions) => {
-        const q = Math.max(1, parseInt(qtyInput.value||'1',10));
-        return actions.order.create({
-          purchase_units: [{
-            amount: {
-              currency_code: "AUD",
-              value: (p.price*q).toFixed(2),
-              breakdown: { item_total: { currency_code: "AUD", value: (p.price*q).toFixed(2) } }
-            },
-            items: [{
-              name: p.name,
-              unit_amount: { currency_code: "AUD", value: p.price.toFixed(2) },
-              quantity: q
-            }]
-          }],
-          application_context: { shipping_preference: "GET_FROM_FILE" }
-        });
-      },
-      onApprove: (data, actions) => actions.order.capture().then(details => {
-        // Save a mini receipt so success page can show a summary
-        const q = Math.max(1, parseInt(qtyInput.value||'1',10));
-        const receipt = { productId: p.id, name: p.name, qty: q, total: (p.price*q).toFixed(2), currency: "AUD", orderId: details.id };
-        localStorage.setItem('lastOrder', JSON.stringify(receipt));
-        window.location.href = "success.html";
-      }),
-      onCancel: () => window.location.href = "cancel.html",
-      onError: (err) => alert("Payment error: " + err)
-    }).render(`#pp-${p.id}`);
-  });
-</script>
-
+    <!-- Dependencies at the end -->
+    <script src="https://unpkg.com/swiper@10/swiper-bundle.min.js"></script>
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/plugins.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/products.js"></script>
 
+    <!-- Page scripts -->
+    <script>
+      // Hide preloader after full load
+      window.addEventListener('load', function(){
+        const pre = document.querySelector('.preloader-wrapper');
+        if(pre){ pre.classList.add('is-hidden'); setTimeout(() => pre.remove(), 350); }
+      });
+
+      document.addEventListener('DOMContentLoaded', function(){
+        // Product tile navigation
+        function goToProduct(id){ window.location.href = 'product.html?id=' + encodeURIComponent(id); }
+        document.querySelectorAll('.product-item').forEach(item => {
+          const id = item.getAttribute('data-id');
+          const cartBtn = item.querySelector('.cart-link');
+          const viewBtn = item.querySelector('.view-btn');
+          if (cartBtn) cartBtn.addEventListener('click', () => goToProduct(id));
+          if (viewBtn) viewBtn.addEventListener('click', () => goToProduct(id));
+        });
+
+        // Demo grid renderer (only if #grid exists)
+        const products = [
+          { id:"engagement-ring-toy", name:"Stuffed Engagement Ring Chew Toy", price:12.50, img:"https://via.placeholder.com/400x300?text=Ring+Toy", bullets:["Soft plush design","Durable for light chew","Fun for dogs & cats","Lightweight shipping"], supplier:{ type:"AliExpress", url:"https://www.aliexpress.com/item/xxxxxxx" } },
+          { id:"plush-bell-balls", name:"Plush Ball with Bells (3-pack)", price:5.99, img:"https://via.placeholder.com/400x300?text=Plush+Balls", bullets:["Set of 3 plush balls","Rattle bells inside","Soft & lightweight","Ideal for indoor play"], supplier:{ type:"AliExpress", url:"https://www.aliexpress.com/item/yyyyyyy" } },
+          { id:"auto-rolling-ball", name:"Auto-Rolling Electric Ball Toy", price:22.00, img:"https://via.placeholder.com/400x300?text=Electric+Ball", bullets:["Automatic motion when touched","USB rechargeable","Great for cats & small dogs","Enclosed design, safe edges"], supplier:{ type:"AliExpress", url:"https://www.aliexpress.com/item/zzzzzzz" } }
+        ];
+
+        const grid = document.getElementById('grid');
+        if (grid) {
+          grid.innerHTML = products.map(p => `
+            <div class="p-card" id="card-${p.id}">
+              <img class="p-img" src="${p.img}" alt="${p.name}">
+              <div class="p-title">${p.name}</div>
+              <ul class="tiny" style="margin:0 0 8px 16px;">
+                ${p.bullets.map(b => `<li>${b}</li>`).join("")}
+              </ul>
+              <div class="p-price">A$${p.price.toFixed(2)}</div>
+              <div class="row">
+                <label class="tiny">Qty<br><input class="qty" id="qty-${p.id}" type="number" min="1" value="1"></label>
+                <div class="tiny" id="total-${p.id}">Total: A$${p.price.toFixed(2)}</div>
+              </div>
+              <div id="pp-${p.id}" style="margin-top:8px"></div>
+              <div class="tiny">Tracked delivery: 7–14 days • 30-day returns</div>
+            </div>
+          `).join("");
+
+          products.forEach(p => {
+            const qtyInput = document.getElementById(`qty-${p.id}`);
+            const totalEl = document.getElementById(`total-${p.id}`);
+            const updateTotal = () => {
+              const q = Math.max(1, parseInt(qtyInput.value||'1',10));
+              totalEl.textContent = `Total: A$${(p.price*q).toFixed(2)}`;
+            };
+            qtyInput.addEventListener('input', updateTotal);
+            updateTotal();
+
+            paypal.Buttons({
+              style: { layout: 'vertical', shape: 'pill', label: 'buynow' },
+              createOrder: (data, actions) => {
+                const q = Math.max(1, parseInt(qtyInput.value||'1',10));
+                return actions.order.create({
+                  purchase_units: [{
+                    amount: { currency_code: 'AUD', value: (p.price*q).toFixed(2), breakdown: { item_total: { currency_code: 'AUD', value: (p.price*q).toFixed(2) } } },
+                    items: [{ name: p.name, unit_amount: { currency_code: 'AUD', value: p.price.toFixed(2) }, quantity: q }]
+                  }],
+                  application_context: { shipping_preference: 'GET_FROM_FILE' }
+                });
+              },
+              onApprove: (data, actions) => actions.order.capture().then(details => {
+                const q = Math.max(1, parseInt(qtyInput.value||'1',10));
+                const receipt = { productId: p.id, name: p.name, qty: q, total: (p.price*q).toFixed(2), currency: 'AUD', orderId: details.id };
+                localStorage.setItem('lastOrder', JSON.stringify(receipt));
+                window.location.href = 'success.html';
+              }),
+              onCancel: () => window.location.href = 'cancel.html',
+              onError: (err) => alert('Payment error: ' + err)
+            }).render(`#pp-${p.id}`);
+          });
+        }
+
+        // Swiper init (after DOM is present)
+        new Swiper('.main-swiper', {
+          loop: true,
+          navigation: { nextEl: '.button-next', prevEl: '.button-prev' },
+          pagination: { el: '.swiper-pagination', clickable: true },
+          slidesPerView: 1,
+          spaceBetween: 0
+        });
+
+        new Swiper('.product-swiper', {
+          loop: false,
+          slidesPerView: 4,
+          spaceBetween: 24,
+          breakpoints: {
+            0:   { slidesPerView: 1.2, spaceBetween: 12 },
+            576: { slidesPerView: 2,   spaceBetween: 16 },
+            992: { slidesPerView: 3,   spaceBetween: 20 },
+            1200:{ slidesPerView: 4,   spaceBetween: 24 }
+          },
+          pagination: { el: '.swiper-pagination', clickable: true }
+        });
+      });
+    </script>
+
+    <!-- Site-level script last with cache-bust -->
+    <script src="js/script.js?v=20251007-1"></script>
   </body>
 </html>
