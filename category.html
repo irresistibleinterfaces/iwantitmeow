@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FPN94DQT2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} 
+      gtag('js', new Date());
+      gtag('config', 'G-5FPN94DQT2');
+    </script>
+
+    <!-- basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- site metas -->
+    <title>I Want It Meow — Category</title>
+    <meta name="description" content="Shop category page for I Want It Meow — fun, quirky pet products for cats, dogs & more. Fast shipping Australia-wide. Treat your pets today!" />
+    <meta name="keywords" content="pet store supplies dog cat toys beds buy animal products" />
+    <meta name="author" content="Irresistible Interfaces" />
+
+    <!-- favicon -->
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- vendor CSS (framework -> reset -> icons -> plugins) -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="icomoon/icomoon.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css" />
+
+    <!-- your styles last so they win; with cache-bust -->
+    <link rel="stylesheet" href="css/vendor.css?v=20251007-1" />
+    <link rel="stylesheet" href="style.css?v=20251007-1" />
+    <link rel="stylesheet" href="css/responsive.css?v=20251007-1" />
+
+    <!-- OPTIONAL: remove these if not used anywhere -->
+    <!-- <link rel="stylesheet" href="css/owl.carousel.min.css" /> -->
+    <!-- <link rel="stylesheet" href="css/owl.theme.default.min.css" /> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen" /> -->
+
+    <!-- Modernizr (safe to keep in head) -->
+    <script src="js/modernizr.js"></script>
+
+    <style>
+      /* Preloader */
+      .preloader-wrapper{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#fff;z-index:9999;opacity:1;visibility:visible;transition:opacity .3s ease,visibility .3s ease}
+      .preloader-wrapper.is-hidden{opacity:0;visibility:hidden}
+
+      /* Simple card grid (only used if #grid is present) */
+      .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+      .p-card{background:#fff;border:1px solid #eee;border-radius:12px;padding:14px;display:flex;flex-direction:column}
+      .p-img{width:100%;height:180px;object-fit:cover;border-radius:10px;border:1px solid #eee}
+      .p-title{font-weight:700;margin:8px 0 4px}
+      .p-price{font-weight:800;margin:6px 0}
+      .row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+      .qty{width:90px;padding:8px;border:1px solid #ddd;border-radius:8px}
+      .tiny{font-size:12px;color:#5b6876}
+    </style>
+
+  <!-- If your site uses a main stylesheet, link it here (keep paths identical to index.html) -->
+  <!-- <link rel="stylesheet" href="css/vendor/swiper-bundle.min.css"> -->
+  <!-- <link rel="stylesheet" href="css/main.css"> -->
+
+  <style>
+    /* Minimal page-specific tweaks — keep look/feel aligned with your current theme */
+    :root {
+      --hero-h: clamp(180px, 28vh, 320px);
+    }
+
+    .cat-hero {
+      position: relative;
+      height: var(--hero-h);
+      display: grid;
+      align-items: end;
+      background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%),
+                  url('images/category-default.jpg') center/cover no-repeat;
+      color: #fff;
+    }
+
+    .cat-hero--noimg {
+      background: radial-gradient(80% 60% at 50% 40%, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0.0) 60%),
+                  linear-gradient(90deg, #141414 0%, #222 100%);
+    }
+
+    .cat-hero .container { padding-bottom: 1.25rem; }
+    .breadcrumbs { font-size: .9rem; opacity: .9; }
+    .breadcrumbs a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+    .cat-title { font-size: clamp(1.75rem, 2.8vw, 2.5rem); margin: .25rem 0 .5rem; }
+    .cat-desc { max-width: 70ch; opacity: .95; }
+
+    .toolbar { border-bottom: 1px solid rgba(0,0,0,.08); background: #fff; position: sticky; top: 0; z-index: 12; }
+    .toolbar .container { display: grid; gap: .75rem; grid-template-columns: 1fr; padding: .75rem 0; }
+    @media (min-width: 768px){ .toolbar .container { grid-template-columns: 1fr auto; align-items: center; } }
+    .filters { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .filters input[type="search"] { min-width: 240px; padding: .5rem .75rem; border:1px solid #ddd; border-radius: .5rem; }
+    .filters .select, .filters .price { padding: .5rem .75rem; border:1px solid #ddd; border-radius: .5rem; background:#fff; }
+    .filters label { font-size:.85rem; margin-right:.25rem; opacity:.8; }
+
+    /* Product grid respects your existing .product-item structure */
+    .product-store { padding: 2rem 0; }
+    .grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0,1fr)); }
+    @media (min-width: 768px){ .grid{ gap:1.25rem; grid-template-columns: repeat(3, minmax(0,1fr)); } }
+    @media (min-width: 1100px){ .grid{ grid-template-columns: repeat(4, minmax(0,1fr)); } }
+
+    .product-item { border: 1px solid #eee; border-radius: 12px; overflow: hidden; background:#fff; display:flex; flex-direction:column; }
+    .image-holder { aspect-ratio: 1 / 1; background:#f7f7f7; display:grid; place-items:center; }
+    .image-holder img { width:100%; height:100%; object-fit:cover; display:block; }
+    .product-meta { padding: .75rem .9rem 1rem; display:grid; gap:.4rem; }
+    .product-meta .name { font-weight:600; line-height:1.25; }
+    .price-row { display:flex; align-items:center; gap:.5rem; }
+    .price { font-weight:700; }
+    .price.compare { text-decoration: line-through; color:#999; font-weight:500; }
+
+    .card-actions { margin-top:auto; padding: .9rem; border-top:1px solid #eee; display:flex; gap:.5rem; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.6rem .85rem; border-radius:.65rem; border:1px solid #ddd; background:#fff; cursor:pointer; transition: .2s ease; text-decoration:none; }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,.06); }
+    .btn.primary { background:#111; color:#fff; border-color:#111; }
+
+    .empty { padding: 3rem 0; text-align:center; color:#666; }
+    .pagination { display:flex; justify-content:center; gap:.5rem; margin: 1rem 0 2rem; }
+
+    /* Utility */
+    .container { width: min(1200px, 92%); margin: 0 auto; }
+    .muted { color:#666; }
+  </style>
+</head>
+
+<body>
+  <!-- ==================== HEADER ==================== -->
+  <!-- START: Site Header/Nav — COPY EXACTLY from your index.html for 1:1 styling -->
+  <header id="site-header">
+    <!-- Paste your existing header/top nav markup from index.html here -->
+  </header>
+  <!-- END: Site Header/Nav -->
+
+  <!-- ==================== HERO (Category) ==================== -->
+  <!-- Replace the background image via data-hero-img (or fallback to gradient if omitted). -->
+  <section id="cat-hero" class="cat-hero cat-hero--noimg" aria-label="Category hero"
+           data-hero-img="">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">›</span>
+        <span id="crumb-cat">Category</span>
+      </nav>
+      <h1 class="cat-title" id="cat-title">Category</h1>
+      <p class="cat-desc" id="cat-desc">Browse fun, quirky picks curated for this category. Filters and sorting below help you find the good stuff faster.</p>
+    </div>
+  </section>
+
+  <!-- ==================== TOOLBAR ==================== -->
+  <div class="toolbar" role="region" aria-label="Category tools">
+    <div class="container">
+      <div class="filters" id="filters-left">
+        <input id="search" type="search" placeholder="Search within this category…" aria-label="Search products in category">
+        <div class="price">
+          <label for="price">Price</label>
+          <select id="price">
+            <option value="any">Any</option>
+            <option value="0-25">$0 – $25</option>
+            <option value="25-50">$25 – $50</option>
+            <option value="50-100">$50 – $100</option>
+            <option value="100-9999">$100+</option>
+          </select>
+        </div>
+      </div>
+      <div class="filters" id="filters-right" style="justify-content:end">
+        <div class="select">
+          <label for="sort">Sort</label>
+          <select id="sort">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A → Z</option>
+            <option value="name-desc">Name: Z → A</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PRODUCT GRID ==================== -->
+  <main id="content" class="product-store">
+    <div class="container">
+      <div class="section-header d-flex flex-wrap align-items-center justify-content-between" style="margin-bottom: .75rem;">
+        <h2 class="section-title" style="margin:0">Results <span class="muted" id="count"></span></h2>
+        <div class="btn-wrap"><a href="shop.html" class="btn">View all products</a></div>
+      </div>
+
+      <div id="grid" class="grid" aria-live="polite"></div>
+
+      <div class="pagination">
+        <button id="loadMore" class="btn" hidden>Load more</button>
+      </div>
+
+      <div id="empty" class="empty" hidden>
+        <p>No products matched your filters. Try clearing the search or adjusting the price range.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <!-- START: Site Footer — COPY EXACTLY from your index.html for 1:1 styling -->
+
+   <!-- footer start -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-menu-list">
+          <div class="row d-flex flex-wrap justify-content-between">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="footer-menu">
+                <h5 class="widget-title">I Want It Meow</h5>
+                <ul class="menu-list list-unstyled">
+                  <li class="menu-item"><a href="about.html">About us</a></li>
+                  <li class="menu-item"><a href="faqs.html">FAQ</a></li>
+                  <li class="menu-item"><a href="terms.html">Terms & Conditions</a></li>
+                  <li class="menu-item"><a href="privacy-policy.html">Privacy Policy</a></li>
+                  <li class="menu-item"><a href="return-and-refund-policy.html">Returns & Refunds</a></li>
+                  <li class="menu-item"><a href="cookies.html">Cookie Guidelines</a></li>
+                  <li class="menu-item"><a href="shipping.html">Delivery Information</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="footer-menu">
+                <h5 class="widget-title">Contact Us</h5>
+                <p>Do you have any questions? <a href="#" class="email">irresistibleinterfaces@gmail.com</a></p>
+                <p>Prefer to speak to a human? Send us an email with your contact details and a brief description of the purpose of the call and a representative will contact you by phone within two business days.</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="footer-menu">
+                <h5 class="widget-title"><a href="irresistibleinterfaces.com.au">Irresistible Interfaces</a></h5>
+                <p>Irresistible Interfaces is an Australia-based design & development studio creating fast, accessible ecommerce experiences and conversions that actually convert. Need a site like this? <a href="https://irresistibleinterfaces.com.au/">Let’s talk</a>.</p>
+                <div class="social-links">
+                  <ul class="d-flex list-unstyled">
+                    <li><a href="#"><i class="icon icon-facebook"></i></a></li>
+                    <li><a href="#"><i class="icon icon-github"></i></a></li>
+                    <li><a href="#"><i class="icon icon-youtube-play"></i></a></li>
+                    <li><a href="#"><i class="icon icon-google"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </footer>
+    <!-- footer end -->
+
+    <div id="footer-bottom">
+      <div class="container">
+        <div class="d-flex align-items-center flex-wrap justify-content-between">
+          <div class="copyright">
+            <p>Design by <a href="https://irresistibleinterfaces.com.au/">Irresistible Interfaces</a></p>
+          </div>
+          <div class="payment-method">
+            <p>Payment options :</p>
+            <div class="card-wrap">
+              <img src="images/visa-icon.jpg" alt="visa">
+              <img src="images/mastercard.png" alt="mastercard">
+              <img src="images/american-express.jpg" alt="american-express">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- END: Site Footer -->
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <!-- Ensure you load the same vendor scripts as index.html (e.g., Swiper, your main.js). -->
+  <!-- <script src="js/vendor/swiper-bundle.min.js"></script> -->
+  <!-- <script src="js/main.js"></script> -->
+  <!-- Import products dataset BEFORE this script if you keep products.js (recommended) -->
+  <!-- <script src="js/products.js"></script> -->
+
+  <script>
+    /**
+     * CATEGORY PAGE LOGIC
+     * - Reads ?cat= from URL to decide which products to show and how to label the page.
+     * - If window.PRODUCTS exists (from your products.js), we'll use it. Otherwise we fall back to a tiny mock.
+     * - Keeps classes like .product-item, .image-holder, etc., so your existing CSS continues to style cards.
+     */
+
+    // --- Helpers ---
+    const $ = (sel, root=document) => root.querySelector(sel);
+    const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+    const params = new URLSearchParams(window.location.search);
+    const catParam = (params.get('cat') || '').trim();
+
+    // A tiny fallback in case products.js isn't loaded yet
+    const mockProducts = [
+      { id: 'sushi-scratcher', name: 'Cat Sushi Scratcher (Nigiri)', price: 39.95, compare_at: 49.95, category: 'scratchers', image: 'images/sushi-scratcher.jpg' },
+      { id: 'collar-cam-pro', name: '4K Wi‑Fi Pet Collar Camera Pro Kit', price: 129.00, compare_at: 149.00, category: 'cameras', image: 'images/placeholder-camera.jpg' },
+      { id: 'uts-dog-costume', name: 'UTS Dog Costume', price: 29.00, compare_at: null, category: 'costumes', image: 'images/placeholder-costume.jpg' },
+      { id: 'mini-collar-cam', name: 'Wireless Mini Collar Cam', price: 69.00, compare_at: 89.00, category: 'cameras', image: 'images/placeholder-camera-mini.jpg' },
+    ];
+
+    const DATA = Array.isArray(window.PRODUCTS) && window.PRODUCTS.length ? window.PRODUCTS : mockProducts;
+
+    // Map some friendly labels if you want prettier titles
+    const CAT_LABELS = {
+      costumes: 'Costume Collection',
+      cameras: 'Pet POV Cameras',
+      toys: 'Toys & Enrichment',
+      beds: 'Beds & Naps',
+      scratchers: 'Scratchers',
+    };
+
+    const DEFAULT_HERO_COPY = {
+      title: 'Category',
+      desc: 'Browse fun, quirky picks curated for this category. Filters and sorting below help you find the good stuff faster.'
+    };
+
+    function initHero(category) {
+      const titleEl = $('#cat-title');
+      const descEl = $('#cat-desc');
+      const crumb = $('#crumb-cat');
+      const hero = $('#cat-hero');
+
+      const label = category ? (CAT_LABELS[category] || capitalise(category)) : DEFAULT_HERO_COPY.title;
+      titleEl.textContent = label || DEFAULT_HERO_COPY.title;
+      crumb.textContent = label || 'Category';
+
+      if (!category) {
+        descEl.textContent = DEFAULT_HERO_COPY.desc;
+      } else {
+        descEl.textContent = `Handpicked ${label.toLowerCase()} — filter, sort, and find your pet\'s next obsession.`;
+      }
+
+      const bg = hero.dataset.heroImg;
+      if (bg) {
+        hero.style.backgroundImage = `linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%), url('${bg}')`;
+        hero.classList.remove('cat-hero--noimg');
+      }
+      document.title = `I Want It Meow — ${label}`;
+    }
+
+    function capitalise(str) { return (str||'').replace(/[-_]+/g,' ').replace(/\b\w/g, m=>m.toUpperCase()); }
+
+    // --- Filtering/Sorting ---
+    let working = [];
+    let page = 1;
+    const pageSize = 16; // adjust for your preference
+
+    function withinPrice(p, band){
+      if (band === 'any') return true;
+      const [min, max] = band.split('-').map(Number);
+      return p >= min && p <= max;
+    }
+
+    function applyFilters() {
+      const q = $('#search').value.trim().toLowerCase();
+      const price = $('#price').value;
+
+      const base = DATA.filter(item => !catParam || String(item.category).toLowerCase() === catParam.toLowerCase());
+
+      working = base.filter(item => {
+        const matchesText = !q || (item.name + ' ' + (item.tags||'') + ' ' + (item.description||'')).toLowerCase().includes(q);
+        const matchesPrice = withinPrice(Number(item.price||0), price);
+        return matchesText && matchesPrice;
+      });
+
+      applySort();
+      page = 1;
+      render();
+    }
+
+    function applySort(){
+      const sort = $('#sort').value;
+      const byName = (a,b)=> String(a.name).localeCompare(String(b.name));
+      const byPrice = (a,b)=> Number(a.price||0) - Number(b.price||0);
+
+      if (sort === 'name-asc') working.sort(byName);
+      else if (sort === 'name-desc') working.sort((a,b)=> byName(b,a));
+      else if (sort === 'price-asc') working.sort(byPrice);
+      else if (sort === 'price-desc') working.sort((a,b)=> byPrice(b,a));
+      // 'featured' keeps original order from DATA
+    }
+
+    function money(n){
+      const v = Number(n||0);
+      return v.toLocaleString('en-AU', { style:'currency', currency:'AUD' });
+    }
+
+    function productCard(p){
+      const compare = p.compare_at ? `<span class="price compare">${money(p.compare_at)}</span>` : '';
+      const img = p.image || 'images/placeholder.jpg';
+      const alt = p.name ? p.name.replace(/"/g, '&quot;') : 'Product image';
+
+      return `
+        <article class="product-item" data-id="${p.id}">
+          <div class="image-holder">
+            <a href="product.html?id=${encodeURIComponent(p.id)}" aria-label="View ${alt}">
+              <img src="${img}" alt="${alt}" class="product-image" loading="lazy">
+            </a>
+          </div>
+          <div class="product-meta">
+            <div class="name">${p.name}</div>
+            <div class="price-row">
+              <span class="price">${money(p.price)}</span>
+              ${compare}
+            </div>
+          </div>
+          <div class="card-actions">
+            <a class="btn" href="product.html?id=${encodeURIComponent(p.id)}">Details</a>
+            <button class="btn primary" data-add id="add-${p.id}" aria-label="Add ${alt} to cart">Add to cart</button>
+          </div>
+        </article>`;
+    }
+
+    function render(){
+      const grid = $('#grid');
+      const empty = $('#empty');
+      const count = $('#count');
+      const loadMore = $('#loadMore');
+
+      const start = 0;
+      const end = page * pageSize;
+      const slice = working.slice(start, end);
+
+      count.textContent = `(${working.length} ${working.length===1?'item':'items'})`;
+
+      grid.innerHTML = slice.map(productCard).join('');
+      empty.hidden = working.length !== 0;
+      loadMore.hidden = working.length <= end;
+
+      // naive add-to-cart hook — integrate with your existing cart JS if present
+      $$("[data-add]").forEach(btn => btn.addEventListener('click', () => {
+        try { window.addToCart && window.addToCart(btn.id.replace('add-',''), 1); } catch(e) {}
+        btn.textContent = 'Added!'; setTimeout(()=> btn.textContent = 'Add to cart', 1200);
+      }));
+    }
+
+    function initEvents(){
+      $('#search').addEventListener('input', debounce(applyFilters, 180));
+      $('#price').addEventListener('change', applyFilters);
+      $('#sort').addEventListener('change', ()=>{ applySort(); render(); });
+      $('#loadMore').addEventListener('click', ()=>{ page++; render(); });
+    }
+
+    function debounce(fn, wait){
+      let t; return (...args)=>{ clearTimeout(t); t = setTimeout(()=> fn.apply(null,args), wait); };
+    }
+
+    // --- Boot ---
+    window.addEventListener('DOMContentLoaded', () => {
+      initHero(catParam);
+      applyFilters();
+      initEvents();
+    });
+  </script>
+</body>
+</html>

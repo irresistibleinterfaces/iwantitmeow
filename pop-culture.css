@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap');
+
+body {
+  overflow-x: hidden;
+  /* Prevents horizontal scrollbar from AOS animations */
+}
+
+/* --- Navbar --- */
+#navbar {
+  /* Initial state is defined by Tailwind classes */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-scrolled {
+  background-color: rgba(247, 245, 242, 0.95);
+  /* hof-ivory with more opacity */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  /* Add scroll state styles */
+  top: 0;
+  left: 0;
+  transform: none;
+  width: 100%;
+  max-width: none;
+  border-radius: 0;
+}
+
+/* --- Hamburger Menu Morph --- */
+#menu-toggle {
+  width: 30px;
+  height: 24px;
+  position: relative;
+  z-index: 100;
+}
+
+#menu-toggle span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #111827;
+  /* hof-charcoal */
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transition: 0.25s ease-in-out;
+}
+
+#menu-toggle span:nth-child(1) {
+  top: 0px;
+}
+
+#menu-toggle span:nth-child(2) {
+  top: 10px;
+}
+
+#menu-toggle span:nth-child(3) {
+  top: 20px;
+}
+
+#menu-toggle.is-active span:nth-child(1) {
+  top: 10px;
+  transform: rotate(135deg);
+  background: #f7f5f2;
+  /* hof-ivory */
+}
+
+#menu-toggle.is-active span:nth-child(2) {
+  opacity: 0;
+  left: -30px;
+}
+
+#menu-toggle.is-active span:nth-child(3) {
+  top: 10px;
+  transform: rotate(-135deg);
+  background: #f7f5f2;
+  /* hof-ivory */
+}
+
+/* --- Full Screen Menu --- */
+#menu-overlay {
+  clip-path: circle(0% at calc(100% - 40px) 40px);
+  transition: clip-path 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+#menu-overlay.is-open {
+  clip-path: circle(150% at calc(100% - 40px) 40px);
+}
+
+/* Menu link animation (replaces GSAP) */
+#menu-overlay nav a {
+  transform: translateY(20px);
+  opacity: 0;
+  transition-property: transform, opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+#menu-overlay nav div {
+  /* Social icons */
+  transform: translateY(20px);
+  opacity: 0;
+  transition-property: transform, opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+/* Staggered delay */
+#menu-overlay.is-open nav a:nth-child(1) {
+  transition-delay: 0.15s;
+}
+
+#menu-overlay.is-open nav a:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+#menu-overlay.is-open nav a:nth-child(3) {
+  transition-delay: 0.25s;
+}
+
+#menu-overlay.is-open nav a:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+#menu-overlay.is-open nav a:nth-child(5) {
+  transition-delay: 0.35s;
+}
+
+#menu-overlay.is-open nav a:nth-child(6) {
+  transition-delay: 0.4s;
+}
+
+#menu-overlay.is-open nav div {
+  transition-delay: 0.45s;
+}
+
+#menu-overlay.is-open nav a,
+#menu-overlay.is-open nav div {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* --- Horizontal Scroller (Swiper) --- */
+.collections-slider {
+  width: 100%;
+  overflow: visible;
+  /* Allows shadows to show */
+}
+
+.collections-slider .swiper-slide {
+  width: 20rem;
+  /* 320px */
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .collections-slider .swiper-slide {
+    width: 24rem;
+    /* 384px */
+  }
+}
+
+.collections-slider .swiper-pagination-bullet {
+  background-color: #c79a3d;
+  opacity: 0.5;
+}
+
+.collections-slider .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+/* --- Fancybox Caption Styling --- */
+.fancybox-caption {
+  background: rgba(17, 24, 39, 0.8);
+  /* hof-charcoal */
+  backdrop-filter: blur(5px);
+  border-top: 1px solid #c79a3d;
+  /* hof-gold */
+  color: #f7f5f2;
+  /* hof-ivory */
+  padding: 20px;
+  font-size: 1rem;
+}
+
+/* --- Masonry Gallery --- */
+.masonry-gallery {
+  column-count: 1;
+  column-gap: 1.5rem;
+  /* gap-6 */
+}
+
+@media (min-width: 768px) {
+  /* md: */
+  .masonry-gallery {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* lg: */
+  .masonry-gallery {
+    column-count: 3;
+  }
+}
+
+.masonry-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  /* gap-6 */
+  break-inside: avoid;
+}
+
+/* --- Logo Scroller (As Featured In) --- */
+.logo-scroller {
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.logo-scroller-inner {
+  display: flex;
+  width: fit-content;
+  animation: scroll 30s linear infinite;
+}
+
+.logo-scroller-inner img {
+  height: 32px;
+  /* 2rem */
+  margin: 0 2.5rem;
+  /* 40px */
+  object-fit: contain;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}

@@ -32,8 +32,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
 
     <!-- vendor CSS (framework -> reset -> icons -> plugins) -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -54,6 +55,7 @@
     <!-- <link rel="stylesheet" href="css/owl.carousel.min.css" /> -->
     <!-- <link rel="stylesheet" href="css/owl.theme.default.min.css" /> -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen" /> -->
+    <!-- <link rel="stylesheet" href="pop-culture.css" /> -->
 
     <!-- Modernizr -->
     <script src="js/modernizr.js"></script>
@@ -61,8 +63,9 @@
     <!-- Tailwind Play CDN (quick prototype) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+
     <style>
-      <!-- Preloader -->
+      /* Preloader */
       .preloader-wrapper{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#fff;z-index:9999;opacity:1;visibility:visible;transition:opacity .3s ease,visibility .3s ease}
       .preloader-wrapper.is-hidden{opacity:0;visibility:hidden}
 
@@ -75,13 +78,6 @@
       .row{display:flex;align-items:center;justify-content:space-between;gap:8px}
       .qty{width:90px;padding:8px;border:1px solid #ddd;border-radius:8px}
       .tiny{font-size:12px;color:#5b6876}
-
-.rubik-dirt-regular {
-  font-family: "Rubik Dirt", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-
 *{
   padding: 0;
   margin: 0;
@@ -187,13 +183,40 @@ a{
   }
 
 }
-
-.marquee-container {
-  overflow: hidden;
-  white-space: nowrap;
-}
-
     </style>
+
+    <!-- CDNs: Tailwind, jQuery, Fancybox, AOS, Swiper, Lucide -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'hof-charcoal': '#111827',
+                    'hof-gold': '#C79A3D',
+                    'hof-ivory': '#F7F5F2',
+                    'hof-blush': '#E8B7B7',
+                },
+                fontFamily: {
+                    'sans': ['Inter', 'sans-serif'],
+                },
+            }
+        }
+    }
+    </script>
+
+    <!-- CSS -->
+
   </head>
 
   <body>
@@ -225,6 +248,7 @@ a{
       </div>
     </div>
 
+
  <div id="header-placeholder"></div>
 
 
@@ -237,129 +261,180 @@ a{
 </div>
 
 
-
-   <main>
-        <!-- Hero Section -->
-        <section class="relative bg-gradient-to-br from-blue-900 to-indigo-800 text-white overflow-hidden">
-            <div class="absolute inset-0 bg-black opacity-50"></div>
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/banner1.png'); background-position: 75%;"></div>
-            
-            <div class="container mx-auto px-4 py-24 md:py-32 relative z-10">
-                <div class="flex flex-col md:flex-row justify-between">
-                    <!-- Left Side: Company Info -->
-                    <div class="w-full md:w-1/2 mb-12 md:mb-0" style="max-width: 50%">
-                        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight hero-headline rubik-dirt-regular" style="font-family: Rubik Dirt; 
-  font-weight: 400;
-  font-size: 6em;
-  color: #262626;
-  font-style: normal;">
-                            ICONIC<br>COSTUMES FOR<br>CATS & DOGS.
-                        </h1>
-                        <p class="text-xl mb-8 hero-subheadline" style="color: #262626">Pop-culture roleplay looks for your four-legged style icon.</p>
-
-                    <div class="btn-wrap">
-                      <a href="#featured-products" class="btn btn-light btn-medium d-flex align-items-center">Shop Collection<i class="icon icon-arrow-io"></i></a>
-                    </div>
-
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Decorative Element -->
-            <div class="absolute bottom-0 left-0 right-0">
-                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
-                </svg>
-            </div>
-        </section>
-
-  
-
-    <section id="latest-collection">
-      <div class="container">
-        <div class="product-collection row">
-          <div class="col-lg-7 col-md-12 left-content">
-            <div class="collection-item">
-              <div class="products-thumb">
-                <img src="images/chicken1.png" alt="collection item" class="large-image image-rounded">
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-6 product-entry">
-                <div class="categories">pop culture collection</div>
-                <h3 class="item-title">iconic characters.</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum.</p>
-                <div class="btn-wrap">
-                  <a href="pop-culture.html" class="d-flex align-items-center">shop collection <i class="icon icon-arrow-io"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-5 col-md-12 right-content flex-wrap">
-            <div class="collection-item top-item">
-              <div class="products-thumb">
-                <img src="images/dog1.png" alt="collection item" class="small-image image-rounded">
-              </div>
-              <div class="col-md-6 product-entry">
-                <div class="categories">Cosplay classics</div>
-                <h3 class="item-title">Shop by Pet.</h3>
-                <div class="btn-wrap">
-                  <a href="cosplay-classics.html" class="d-flex align-items-center">shop collection <i class="icon icon-arrow-io"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="collection-item bottom-item">
-              <div class="products-thumb">
-                <img src="images/collection-item3.jpg" alt="collection item" class="small-image image-rounded">
-              </div>
-              <div class="col-md-6 product-entry">
-                <div class="categories">Costume Accessories</div>
-                <h3 class="item-title">Costume Accessories.</h3>
-                <div class="btn-wrap">
-                  <a href="accessories.html" class="d-flex align-items-center">shop collection <i class="icon icon-arrow-io"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="promo-lrg align-center">
+  <img src="images/pop-culture-banner.png" style="max-width: 100%; padding:  0px">
+</div>
 
 
-    <!-- featured products section start -->
-    <section id="featured-products" class="product-store padding-large">
+   
+   <main class="">
+
+
+
+    <!-- pop-culture products section start -->
+    <section id="pop-culture-products" class="product-store padding-large">
 
       <div class="container">
         <div class="section-header d-flex flex-wrap align-items-center justify-content-between">
-          <h2 class="section-title">Featured Costumes</h2>
+          <h2 class="section-title">Pop Culture</h2>
           <div class="btn-wrap"><a href="shop.html" class="d-flex align-items-center">View all<i class="icon icon icon-arrow-io"></i></a></div>
         </div>
         <div class="swiper product-swiper overflow-hidden">
-          <div class="swiper-wrapper" id="featured-products-wrapper">
+          <div class="swiper-wrapper" id="pop-culture-products-wrapper">
           <!-- JS will inject slides here -->
           </div>
           <div class="swiper-pagination"></div>
         </div>
       </div>
     </section>
-    <!-- featured products section end -->
+    <!-- pop-culture products section end -->
+
+        <!-- ===== About Section ===== -->
+        <section id="about" class="bg-white">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <!-- Designer Photo -->
+                <div data-aos="fade-right">
+                    <div class="collection-item" style="width:auto; height:100%; padding: 0 50px;">
+                        <div class="products-thumb">
+                            <img src="images/doggy-depp1.png" alt="collection item" class="">
+                        </div>
+                    </div>
+                </div>
+                <!-- About Content -->
+                <div data-aos="fade-left">
+                    <span class="text-hof-gold font-semibold tracking-widest uppercase">The "Doggy Depp" Look</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-hof-charcoal mt-2">
+                        Fetch and Loathing In Las Vegas
+                    </h2>
+                    <p class="mt-6 text-gray-600 text-lg">
+                        This costume lets your pet channel the chaotic energy of a desert-roaming, sunglasses-wearing, 
+                        lizard-spotting icon. Whether you’ve got a cat with attitude or a dog who’s permanently on the
+                        brink of a road trip meltdown, this outfit brings the madness to life.
+                    </p>
+                    <p class="mt-4 text-gray-600">
+                        Slip them into the classic retro Hawaiian shirt, pop on the iconic sunnies and hat, and suddenly
+                        your furry mate looks like they’re narrating their own wild odyssey. This costume is lightweight,
+                        comfy, and was designed so your pet can run, nap, destroy furniture, or stare dramatically into
+                        the void — all without missing a beat. 
+                    </p>
+                    <br>
+                    <div class="btn-wrap"><a href="#about-fear" class="d-flex align-items-center">Continue Reading <i class="icon icon icon-arrow-io"></i></a></div>
+                </div>
+            </div>
+        </section>
 
 
+        <!-- ===== About Section ===== -->
+        <section id="about-fear" class="bg-white">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
-    <!-- shop by category section start -->
-    <section class="product-store" id="shop-by-category" style="margin-top: 0; padding-top: 80px;">
-      <div class="container">
-        <div class="section-header d-flex flex-wrap align-items-center justify-content-between">
-          <h2 class="section-title">Shop by Category</h2>
-        </div>
-        <!-- Category carousels will inject here -->
-        <div id="category-carousels"></div>
-      </div>
-    </section>
-    <!-- shop by category section end -->
+               <!-- About Content -->
+                <div data-aos="fade-right">
+                    <span class="text-hof-gold font-semibold tracking-widest uppercase">The "Doggy Depp" Look</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-hof-charcoal mt-2">
+                        The 4pc Costume Set
+                    </h2>
+                    <p class="mt-6 text-gray-600 text-lg">
+                        This costume fits both cats and dogs without discrimination. Available sizes range from XS - XL,
+                        just follow the sizing chart and guide provided at checkout and select your pets size out of the options.*
+                        Adjustable straps and soft materials make it easy to put on and remove, even if your pet has
+                        very little patience. Bonus: those fake cigarettes are plush! Specifically designed and made safe for pets.
+                    </p>
+                    <p class="mt-4 text-gray-600">
+                        Whether you're a diehard fan of the film, a collector of ridiculous pet outfits, or someone who simply
+                        enjoys watching your pet look unreasonably unhinged, this is the costume that delivers. Bring on the
+                        desert dreams, questionable adventures, and iconic vibes — your furry little weirdo is ready for their close-up.
+                    </p>
+                    <br>
+                    <div class="btn-wrap"><a href="#about-fear" class="d-flex align-items-center">Add To Cart <i class="icon icon icon-arrow-io"></i></a></div>
+                    <br>
+                    <p style="font-size: 12px;">*Product sizes, styles, and colours are subject to stock availability at the time of purchase.</p>
+                </div>
+                <!-- Designer Photo -->
+                <div data-aos="fade-left">
+                    <div class="collection-item" style="width:auto; height:100%; padding: 0 50px;">
+                        <div class="products-thumb">
+                            <img src="images/doggy-depp2.png" alt="collection item" class="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<hr style="padding: 80px">
 
 
+        <!-- ===== About Section ===== -->
+        <section id="about" class="bg-white">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <!-- Designer Photo -->
+                <div data-aos="fade-right">
+                    <div class="collection-item" style="width:auto; height:100%; padding: 0 50px;">
+                        <div class="products-thumb">
+                            <img src="images/pup-fiction1.png" alt="collection item" class="">
+                        </div>
+                    </div>
+                </div>
+                <!-- About Content -->
+                <div data-aos="fade-left">
+                    <span class="text-hof-gold font-semibold tracking-widest uppercase">The "Doggy Depp" Look</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-hof-charcoal mt-2">
+                        Pup Fiction
+                    </h2>
+                    <p class="mt-6 text-gray-600 text-lg">
+                        Some pets were born for greatness… and some were born to look like the coolest pet to ever walk
+                        into a diner wearing a black suit. This costume channels that unmistakable “don’t mess with me”
+                        energy, giving your cat or dog the aura of a legendary character. It’s classy, iconic, and ridiculously
+                        funny on any furry friend.
+                    </p>
+                    <p class="mt-4 text-gray-600">
+                        With a miniature black suit jacket, crisp white shirt front, and tiny tie, your pet instantly
+                        transforms into a charismatic negotiator of treats and snacks. The outfit is lightweight and designed
+                        with comfort in mind, so your pet can strut, nap, attack invisible enemies, or stare down guests with
+                        dramatic seriousness. It's perfect for parties, themed events, or unforgettable photo ops.
+                    </p>
+                    <br>
+                    <div class="btn-wrap"><a href="#about-fiction" class="d-flex align-items-center">Continue Reading <i class="icon icon icon-arrow-io"></i></a></div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===== About Section ===== -->
+        <section id="about-fiction" class="bg-white">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+
+               <!-- About Content -->
+                <div data-aos="fade-right">
+                    <span class="text-hof-gold font-semibold tracking-widest uppercase">The "Doggy Depp" Look</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-hof-charcoal mt-2">
+                        The 4pc Costume Set
+                    </h2>
+                    <p class="mt-6 text-gray-600 text-lg">
+                        The costume fits both cats and dogs thanks to easy adjustable straps and soft, flexible materials. Even
+                        pets who normally hate clothing tend to tolerate this one thanks to its lightweight design. Whether your
+                        pet is confident, chaotic, or just confused, the look somehow works on all personalities.
+                    </p>
+                    <p class="mt-4 text-gray-600">
+                        If you love movie parodies, ridiculous pet outfits, or simply want to watch your little mate look like they’re
+                        about to deliver an iconic monologue, this costume is a winner. It brings humour, nostalgia, and style together
+                        in one tiny, absurdly cool outfit.
+                    </p>
+                    <br>
+                    <div class="btn-wrap"><a href="#about-fear" class="d-flex align-items-center">Add To Cart <i class="icon icon icon-arrow-io"></i></a></div>
+                    <br>
+                    <p style="font-size: 12px;">*Product sizes, styles, and colours are subject to stock availability at the time of purchase.</p>
+                </div>
+                <!-- Designer Photo -->
+                <div data-aos="fade-left">
+                    <div class="collection-item" style="width:auto; height:100%; padding: 0 50px;">
+                        <div class="products-thumb">
+                            <img src="images/pup-fiction2.png" alt="collection item" class="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     <!-- hero section start -->
     <section id="billboard" class="overflow-hidden">
@@ -375,173 +450,10 @@ a{
 
 
 
-
-    <!-- large banner section start -->
-    <section>
-      <div class="container">
-          <div class="home-grid">
-
-            <div class="products-thumb grid-col">
-              <div class="video-wrapper">
-                <video autoplay muted loop playsinline>
-                  <source src="images/insta-vid.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
-
-            <div class="product-entry grid-col">
-              <div class="categories">Pop Culture Collection</div>
-              <h2>Iconic Costumes for Pets.</h2>
-              <p>Shop Insta-worthy costumes and accessories for cats & dogs - made for paws and applause.</p>
-              <div class="btn-wrap">
-                <br>
-                <a href="pop-culture.html" class="d-flex align-items-center">shop collection <i class="icon icon-arrow-io"></i>
-                </a>
-              </div>
-            </div>
-
-          </div>
-      </div>
-    </section>
-    <!-- large banner section start -->
- 
- 
-
-    <section id="latest-blog" class="padding-large">
-      <div class="container">
-        <div class="section-header d-flex flex-wrap align-items-center justify-content-between">
-          <h2 class="section-title">our Journal</h2>
-          <div class="btn-wrap align-right">
-            <a href="blog.html" class="d-flex align-items-center">Read All Articles <i class="icon icon icon-arrow-io"></i>
-            </a>
-          </div>
-        </div>
-        <div class="row d-flex flex-wrap">
-          <article class="col-md-4 post-item">
-            <div class="image-holder zoom-effect">
-              <a href="single-post.html">
-                <img src="images/pets-under-xmas-tree.jpg" alt="pets wearing Christmas accessories posing for photo in front of a Christmas tree" class="post-image">
-              </a>
-            </div>
-            <div class="post-content d-flex">
-              <div class="meta-date">
-                <div class="meta-day text-primary">19</div>
-                <div class="meta-month">Nov-2025</div>
-              </div>
-              <div class="post-header">
-                <h3 class="post-title">
-                  <a href="single-post.html">Dog & Cat Dress-Up Tips: What Every Pet Owner Needs to Know</a>
-                </h3>
-                <a href="blog.html" class="blog-categories">Costumes for Pets</a>
-              </div>
-            </div>
-          </article>
-          <article class="col-md-4 post-item">
-            <div class="image-holder zoom-effect">
-              <a href="single-post.html">
-                <img src="images/dog-in-field.jpg" alt="post" class="post-image">
-              </a>
-            </div>
-            <div class="post-content d-flex">
-              <div class="meta-date">
-                <div class="meta-day text-primary">1</div>
-                <div class="meta-month">Oct-2025</div>
-              </div>
-              <div class="post-header">
-                <h3 class="post-title">
-                  <a href="single-post.html">Tick-check routine after a bush walk</a>
-                </h3>
-                <a href="blog.html" class="blog-categories">Paralysis Ticks & Parasite Prevention</a>
-              </div>
-            </div>
-          </article>
-          <article class="col-md-4 post-item">
-            <div class="image-holder zoom-effect">
-              <a href="single-post.html">
-                <img src="images/cat-indoors.jpg" alt="post" class="post-image">
-              </a>
-            </div>
-            <div class="post-content d-flex">
-              <div class="meta-date">
-                <div class="meta-day text-primary">28</div>
-                <div class="meta-month">Aug-2025</div>
-              </div>
-              <div class="post-header">
-                <h3 class="post-title">
-                  <a href="single-post.html">Is “night curfew” for cats coming to NSW? What the latest inquiry says</a>
-                </h3>
-                <a href="blog.html" class="blog-categories">Keeping Cats Safe at Home</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-<div class="video-wrapper">
-  <video autoplay muted loop playsinline>
-    <source src="images/brand-vid2.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+<div class="promo-lrg align-center">
+  <img src="images/more-soon.png" style="max-width: 100%; padding:  0px">
 </div>
 
-
-
-
-    <!-- quotation section start -->
-    <section id="quotation" class="align-center padding-large">
-      <div class="inner-content">
-        <h2 class="section-title divider">Our Philosophy</h2>
-        <blockquote>
-          <q>The greatness of a nation and its moral progress can be judged by the way its animals are treated.</q>
-          <div class="author-name">- Mahatma Gandhi</div>
-        </blockquote>
-      </div>
-    </section>
-    <!-- quotation section end -->
-
-            <div class="marquee-container">
-              <h1 class="item-title home-title marquee">i want it meow - Australia's Leading Pet Costume Store <i class="fas fa-paw"></i></h1>
-            </div>
-
-              <h2 class="item-title home-heading">Pet Costume Store for Cats & Dogs Who Love a Bit of Roleplay</h2>
-<div class="home-paragraph">
-              <p>IWANTITMEOW is an <strong>Australian no.1 online pet costume store</strong> selling costumes for dogs and cats. We offer a range of high quality yet <strong>affordable pet costumes and accessories online</strong>. We <a href="https://iwantitmeow.com.au/shipping-returns-policy" target="_blank">ship all of our pet products Australia wide</a> and offer a FREE shipping on orders over $99.00 to pet owners in all major cities and metro areas in Australia.</p>
-              <p>Browse our popular categories including <a href="https://iwantitmeow.com.au/dogs/">dog costumes</a>, <a href="https://iwantitmeow.com.au/cats/">cat costumes</a>, <a href="https://iwantitmeow.com.au/funny/">funny costumes</a>, <a href="https://iwantitmeow.com.au/disney/">Disney costumes</a>, <a href="https://iwantitmeow.com.au/pop-culture/">pop culture costumes</a>, and other fun themes. Or learn about <a href="https://iwantitmeow.com.au/blog/safety/">pet costume safety</a> or <a href="https://iwantitmeow.com.au/blog/tips/">how to get instagram-worthy pics of your pet in a costume</a>.</p>
-              <p>Shop for dog and cat costumes online with fast shipping to Sydney, Melbourne, Brisbane, Perth, Adelaide, Canberra and Australia wide.</p>
-</div>
-              <div class="btn-wrap">
-                <a href="#shop-by-category" class="d-flex align-items-center">shop by category<i class="icon icon-arrow-io"></i>
-                </a>
-              </div>
-            </div>
-              <p>The <strong>pet costumes</strong> we display on our website are of the highest quality. The products we sell and recommend at our <strong>online pet costume store</strong> are legitimate and trusted by us to be worn by our own animals as well as our customers. We have been involved in the pet industry since 2008. We made the jump to the internet and started our online pet costumes store in 2024. Find out more <a href="https://iwantitmeow.com.au/about-us" target="_blank">about us</a>.</p>
-    <!-- shipping information section start -->
-    <section id="shipping-information">
-      <hr>
-      <div class="container">
-        <div class="row d-flex flex-wrap align-items-center justify-content-between">
-          <div class="col-md-3 col-sm-6">
-            <div class="icon-box"><i class="icon icon-truck"></i>
-              <h4 class="block-title"><strong>Free shipping within</strong> Over $99</h4>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="icon-box"><i class="icon icon-return"></i>
-              <h4 class="block-title"><strong>Money back</strong> Return within 7 days</h4>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="icon-box"><i class="icon icon-help_outline"></i>
-              <h4 class="block-title"><strong>Any questions?</strong> Experts are ready</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr>
-    </section>
-    <!-- shipping information section end -->
 
     <!-- footer start -->
     <footer id="footer">
@@ -776,7 +688,64 @@ a{
     });
   });
 
-  
+document.addEventListener("DOMContentLoaded", () => {
+    const popCultureCategory = "pop-culture"; // 👈 change this to whatever category you want featured
+    const wrapper = document.getElementById("pop-culture-products-wrapper");
+
+    // Pull in filtered products
+    const popCultureProducts = window.findProductsByCategory(popCultureCategory) || [];
+
+    if (!popCultureProducts.length) {
+      wrapper.innerHTML = "<p>No pop culture products found.</p>";
+      return;
+    }
+
+    wrapper.innerHTML = popCultureProducts.map(p => `
+      <div class="swiper-slide">
+        <div class="product-item" data-id="${p.id}">
+          <div class="image-holder">
+            <a href="product.html?id=${p.id}">
+              <img src="${p.img}" alt="${p.name}" class="product-image">
+            </a>
+          </div>
+          <div class="cart-concern">
+            <div class="cart-button d-flex justify-content-between align-items-center">
+              <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i></button>
+              <button type="button" class="view-btn tooltip d-flex">
+                <i class="icon icon-screen-full"></i>
+                <span class="tooltip-text">Quick view</span>
+              </button>
+              <button type="button" class="wishlist-btn"><i class="icon icon-heart"></i></button>
+            </div>
+          </div>
+          <div class="product-detail">
+            <h3 class="product-title">
+              <a href="product.html?id=${p.id}">${p.name}</a>
+            </h3>
+            <span class="item-price text-primary">A$${p.price.toFixed(2)}</span>
+          </div>
+        </div>
+      </div>
+    `).join("");
+
+    // 🔁 Re-init Swiper after injecting new slides
+    new Swiper('.product-swiper', {
+      slidesPerView: 4,
+      spaceBetween: 30,
+      loop: true,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      breakpoints: {
+        320: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        992: { slidesPerView: 3 },
+        1200: { slidesPerView: 4 },
+      },
+    });
+  });
+
+
+
+
 document.querySelectorAll('.dropdown').forEach(dropdown => {
   const button = dropdown.querySelector('.dropbtn');
   let sticky = false;
@@ -802,8 +771,10 @@ document.addEventListener('click', () => {
     <!-- Site-level script last with cache-bust -->
     <script src="js/script.js?v=20251007-1"></script>
 
+
     <script src="layout.js"></script>
 
+    <script src="pop-culture.js"></script>
   </body>
 <!-- ADD / REPLACE CSS: put this inside your <style> or stylesheet -->
 <style>
